@@ -18,8 +18,5 @@ body {
   justify-content: space-between;
   align-items: baseline;
   padding: 8px 0;
-}
-
-.menu-item:not(:last-child) {
   border-bottom: 1px solid black;
 }
