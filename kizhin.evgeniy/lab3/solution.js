@@ -1,12 +1,13 @@
 function findPairsWithSum(arr, sum) {
   const pairs = [];
+  const seen = new Set();
 
-  for (let i = 0; i < arr.length; i += 1) {
-    for (let j = i + 1; j < arr.length; j += 1) {
-      if (arr[i] + arr[j] === sum) {
-        pairs.push([arr[i], arr[j]]);
-      }
+  for (const x of arr) {
+    const complement = sum - x;
+    if (seen.has(complement)) {
+      pairs.push([complement, x]);
     }
+    seen.add(x);
   }
 
   return pairs;
